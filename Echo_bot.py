@@ -12,7 +12,7 @@ from re import split as rsplit
 
 
 config = configparser.ConfigParser()
-config.read('token.ini')
+config.read('.ini')
 API_TOKEN = config['AAGaribyanBot']['Token']
 
 # создаем объекты Бота и диспетчера

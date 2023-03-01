@@ -8,8 +8,11 @@ from random import randint
 
 # токен
 config = configparser.ConfigParser()
-config.read('token.ini')
+config.read('.ini')
 BOT_TOKEN = config['AAGaribyanBot']['Token']
+# альтернатива
+# import os
+# BOT_TOKEN = os.getenv('BOT_TOKEN')
 
 # создаем объекты Бота и диспетчера
 bot: Bot = Bot(BOT_TOKEN)
@@ -21,8 +24,7 @@ users: dict = {}
 # Количество попыток, доступных пользователю в игре
 ATTEMPTS: int = 7  # int(log2(100)) + 1
 
-
-#def my_start_filter(message: Message) -> bool:
+# def my_start_filter(message: Message) -> bool:  # функция для кастомного фильтра
 #    return message.text == '/start'
 
 # Этот хэндлер будет срабатывать на команду "/start"
@@ -73,7 +75,7 @@ async def process_cancel_command(message: Message):
 
 # Этот хэндлер будет срабатывать на согласие пользователя сыграть в игру
 @dp.message(Text(text=['Да', 'Давай', 'Сыграем', 'Игра',
-                       'Играть', 'Хочу играть'], ignore_case=True))
+                       'Играть', 'Хочу играть', 'Ага'], ignore_case=True))
 async def process_positive_answer(message: Message):
     if not users[message.from_user.id]['in_game']:
         await message.answer('Ура!\n\nЯ загадал число от 1 до 100, '
