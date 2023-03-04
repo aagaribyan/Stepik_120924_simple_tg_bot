@@ -9,7 +9,7 @@ from random import randint
 # токен
 config = configparser.ConfigParser()
 config.read('.ini')
-BOT_TOKEN = config['AAGaribyanBot']['Token']
+BOT_TOKEN = config['AAGaribyanBot']['BOT_TOKEN']
 # альтернатива
 # import os
 # BOT_TOKEN = os.getenv('BOT_TOKEN')
