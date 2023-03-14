@@ -1,7 +1,7 @@
 from aiogram import Bot
 from aiogram.types import BotCommand
 
-from lexicon import LEXICON_COMMANDS
+from lexicon.lexicon import LEXICON_COMMANDS
 
 
 # функция для настройки кнопки Menu бота
