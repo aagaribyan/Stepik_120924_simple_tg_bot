@@ -13,7 +13,7 @@ from re import split as rsplit
 
 config = configparser.ConfigParser()
 config.read('.ini')
-API_TOKEN = config['AAGaribyanBot']['Token']
+API_TOKEN = config['AAGaribyanBot']['BOT_TOKEN']
 
 # создаем объекты Бота и диспетчера
 bot: Bot = Bot(token=API_TOKEN)
@@ -45,8 +45,8 @@ async def send_sticker_echo(message: Message):
 
 
 # этот хендлер будет срабатывать на любые текстовые сообщения, кроме команд /start и /help
-#@dp.message(ContentType.TEXT)
-#async def send_text_echo(message: Message):
+# @dp.message(ContentType.TEXT)
+# async def send_text_echo(message: Message):
 #    await message.answer(text=rsplit("\. |\.\.\. |\? |\! ", message.text)[-1])
         # reply(text=message.text.split('. ')[-1])
 
@@ -68,8 +68,7 @@ async def send_copy(message: Message):  # send_message(message: Message):
 # dp.message.register(process_help_command, Command(commands=['help']))
 # dp.message.register(send_photo_echo, F.photo)  # (send_photo_echo, F.content_type == ContentType.PHOTO)
 # dp.message.register(send_sticker_echo, F.content_type == ContentType.STICKER)
-#dp.message.register(send_message)
-
+# dp.message.register(send_message)
 
 
 
